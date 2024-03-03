@@ -1,0 +1,88 @@
+.login_page {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  &-content {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    & > div {
+      flex: 1;
+    }
+    &_image {
+      position: relative;
+      width: 70%;
+      height: 100%;
+      background-color: white;
+      // transform: skewY(-4deg);
+      transform-origin: bottom left;
+      transform: skewX(6deg);
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        object-position: 100%;
+      }
+    }
+    &_input {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      &_cont {
+        padding: 2rem;
+        min-height: 50%;
+        max-width: 80%;
+        min-width: 400px;
+        box-shadow: 0 0 3px rgba(black, 0.6);
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.7rem;
+        &-container {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 1.3rem;
+          align-items: center;
+          & > div {
+            display: flex;
+            align-items: stretch;
+            justify-content: stretch;
+            height: 30px;
+            font-size: 18px;
+            position: relative;
+            & > svg {
+              align-self: center;
+              position: absolute;
+              left: 0.22rem;
+            }
+            input {
+              border-radius: 5px;
+              border: 1px solid gray;
+              padding-left: 1.8rem;
+              width: 100%;
+              outline: none;
+            }
+          }
+        }
+        .button_section {
+          display: flex;
+          gap: 3rem;
+          align-items: center;
+          font-size: 15px;
+          button{
+            padding:0.3rem 1rem;
+            color:white;
+            background-color: green;
+            border:none;
+            border-radius: 5px;
+
+          }
+        }
+      }
+    }
+  }
+}

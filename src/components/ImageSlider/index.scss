@@ -1,0 +1,18 @@
+.image_slider {
+  display: flex;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  // position: relative;
+  align-items: center;
+  & img {
+    min-width: 100%;
+    min-height: 100vh;
+    object-fit: cover;
+  }
+  &-dots{
+    position: absolute;
+    bottom:5%;
+    left:50%;
+  }
+}
