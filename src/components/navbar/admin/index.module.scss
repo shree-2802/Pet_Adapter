@@ -1,0 +1,99 @@
+@import "../../../styles/index.scss";
+
+.admin_navbar {
+    display: flex;
+    flex-direction: column;
+    min-width: 18rem;
+    background-color: rgba($main-bg-1, 0.86);
+    padding: 2.5rem 1.5rem;
+    justify-content: space-between;
+    color: $main-bg-2;
+
+    &_top {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+    }
+
+    img {
+        width: 85px;
+        height: 85px;
+        border-radius: 50%;
+        object-position: center;
+        box-shadow: 0 0 5px white;
+        cursor: pointer;
+    }
+
+    &_userInfo {
+        display: flex;
+        gap: 1.3rem;
+        align-items: center;
+
+        &_name {
+            animation: slideIn 1.75s forwards;
+            font-weight: 400;
+        }
+
+        &_role {
+            display: flex;
+            flex-direction: column;
+            row-gap: 0.7rem;
+            text-align: center;
+
+            p {
+                font-size: 15px;
+            }
+        }
+    }
+
+    &_navContent {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding-left: 1%;
+    }
+
+    &_navContent_single,
+    &_logout,.display_line {
+        display: flex;
+        height: 2.8rem;
+        align-items: center;
+        border-radius: 5px;
+        gap: 1.5rem;
+        font-size: 18px;
+        cursor: pointer;
+        transition: transform 0.15s,;
+    }
+
+    &_navContent_single:hover,
+    &_logout:hover {
+        transform: translateX(10px);
+    }
+
+    &_logout {
+        & h2 {
+            font-weight: 300;
+        }
+    }
+}
+.line{
+    background-color: aliceblue;
+    height:2.8rem;
+    width:2px;
+    display: none;
+}
+
+.display_line .line{
+    background-color: rgb(146, 243, 243);
+    display: inline;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

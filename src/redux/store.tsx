@@ -12,6 +12,7 @@ import {
 import storage from "redux-persist/lib/storage";
 
 import userReducer from "./slice/login";
+import { useDispatch } from "react-redux";
 
 const persistConfig = {
   key: "root",
@@ -35,6 +36,7 @@ export let persistor = persistStore(store);
 export default store;
 
 export type RootState = ReturnType<typeof store.getState>;
+export const useAppDispatch = () => useDispatch<typeof store.dispatch>();
 
 //persistStore - store state of the application in local storage(ls)
 //persistReducer - tells which reducer slices should be stored and makin' it effective

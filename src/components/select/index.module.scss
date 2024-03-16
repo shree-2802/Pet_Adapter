@@ -1,0 +1,45 @@
+@import "../../styles/mixins";
+
+.select_component {
+  position: relative;
+  height: 100%;
+  &_box {
+    @include flex-row-center(0.3rem, center);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 0.4rem 0.5rem;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 14px;
+    height: 100%;
+  }
+  p {
+    line-height: 0;
+  }
+  & p:last-child {
+    cursor: pointer;
+  }
+  .options {
+    width: 100%;
+    position: absolute;
+    top: 2rem;
+    border: 1px solid gray;
+    border-radius: 5px;
+    color: rgb(66, 65, 65);
+    background-color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    div {
+      padding: 0.2rem;
+    }
+    .selected {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+  .inactive{
+    background-color: rgba(20, 20, 20, 0.15);
+    cursor: not-allowed;
+  }
+  .inactive  .click{
+    cursor: not-allowed;
+  }
+}

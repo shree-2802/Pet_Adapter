@@ -1,0 +1,34 @@
+.feedbacks {
+    display: flex;
+    flex-direction: column;
+    gap: 2.7rem;
+    padding: 1.5rem 0;
+    width: 100%;
+
+    &_filter {
+        display: flex;
+        gap: 3rem;
+        width: 100%;
+        padding: 0 0 0 0.1rem;
+        align-items: center;
+        div {
+            color: white;
+            border-style: none;
+            padding: 0.6rem 1rem;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            
+        }
+
+        .selected {
+            background-color: green;
+        }
+
+        .unselected {
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
+            padding: 0.5rem 0.96rem;
+            color:rgba(0,0,0,0.8);
+        }
+    }
+}

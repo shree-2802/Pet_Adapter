@@ -1,0 +1,64 @@
+@mixin flex-row-gap($gap) {
+  display: flex;
+  column-gap: $gap;
+}
+@mixin flex-row-center($gap, $alignItems) {
+  display: flex;
+  gap: $gap;
+  align-items: $alignItems;
+}
+@mixin flex-center($alignItems) {
+  display: flex;
+  align-items: $alignItems;
+}
+@mixin flex-row-direction($flex-direction) {
+  display: flex;
+  flex-direction: $flex-direction;
+}
+
+@mixin flex-row($alignItems, $justifyContent) {
+  display: flex;
+  align-items: $alignItems;
+  justify-content: $justifyContent;
+}
+
+@mixin flex-gap-coordinate($alignItems, $justifyContent, $gap) {
+  display: flex;
+  align-items: $alignItems;
+  justify-content: $justifyContent;
+  column-gap: $gap;
+}
+
+@mixin flex-column-gap($gap) {
+  display: flex;
+  flex-direction: column;
+  row-gap: $gap;
+}
+@mixin flex-column-align-gap($alignItems, $gap) {
+  display: flex;
+  flex-direction: column;
+  align-items: $alignItems;
+  gap: $gap;
+}
+
+@mixin flex-column($alignItems, $justifyContent) {
+  display: flex;
+  flex-direction: column;
+  align-items: $alignItems;
+  justify-content: $justifyContent;
+}
+
+@mixin flex-column-coordinates($alignItems, $justifyContent, $gap) {
+  display: flex;
+  flex-direction: column;
+  align-items: $alignItems;
+  justify-content: $justifyContent;
+  row-gap: $gap;
+}
+
+@mixin ellipse($width) {
+  white-space: nowrap;
+  width: $width;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

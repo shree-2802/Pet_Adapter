@@ -1,0 +1,31 @@
+.desc {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow: hidden;
+    padding: 0.3rem;
+    .description {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        box-shadow: 0 0 3px rgba(41, 41, 41, 0.8);
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        overflow-y: scroll;
+        &_div {
+            display: flex;
+            gap: 1.5rem;
+            box-shadow: 0 0 2px rgba(68, 66, 66, 0.9);
+            max-width: 100%;
+            border-radius: 10px;
+            padding: 1.5rem;
+            align-items: center;
+            img {
+                width: 60px;
+                height: 60px;
+                border-radius: 30px;
+                object-fit: cover;
+            }
+        }
+    }
+}

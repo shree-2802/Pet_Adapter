@@ -12,13 +12,17 @@ code {
     monospace;
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-a{
+a {
   text-decoration: none;
   color: blue;
+}
+
+::-webkit-scrollbar {
+  width: 0
 }

@@ -1,0 +1,18 @@
+.layout {
+    display: flex;
+    gap: 2rem;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    &>div:nth-child(2) {
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+}
+
+// background-color: rgb(106, 90, 205);
+// background-color: rgb(238, 130, 238);
+// background-color: rgb(185, 177, 238);
+// background-color: rgb(150, 86, 150);
+// background-color: rgb(76, 67, 131);
+// background-color: rgb(196, 147, 196);

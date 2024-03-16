@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { inputText } from "../../constants/loginInput";
 import "./index.scss";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState, useAppDispatch } from "../../redux/store";
+import { setuser, userSliceType, userType } from "../../redux/slice/login";
+import { alertpop } from "../../utils/sweetalert";
+import { useNavigate } from "react-router-dom";
 
 export type LoginInputType = {
   accAccess: "Login" | "SignUp";
@@ -13,7 +18,11 @@ const LoginInput: React.FC<LoginInputType> = ({ accAccess, setAccAccess }) => {
   const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
-
+  const [isAuth, setisAuth] = useState(false);
+  const users: userType[] = useSelector<RootState>(state => state.user.users) as userType[];
+  const loggedInUser: userType = useSelector<RootState>(state => state.user.loggedInUser) as userType;
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
   const handleChange: handleChangeType = (text, type) => {
     if (type === "mail") {
       setMail(text);
@@ -34,11 +43,37 @@ const LoginInput: React.FC<LoginInputType> = ({ accAccess, setAccAccess }) => {
       setSign("SignUp");
     }
   };
-  const handleSubmit=()=>{
-    if(accAccess==='Login'){
-      
+  const handleSubmit = () => {
+    console.log(mail, " ", password)
+    if (accAccess === 'Login') {
+      let isAuthenticated = false;
+      users.forEach(user => {
+        if (user.mail === mail && password === user.password) {
+          dispatch(setuser(mail))
+          isAuthenticated = true;
+          setisAuth(true);
+          return;
+        }
+      })
+      console.log(isAuthenticated);
+      alertpop(isAuthenticated)
+
     }
   }
+  useEffect(() => {
+    console.log(loggedInUser, isAuth, " in use Effect")
+    if (loggedInUser) {
+      if (isAuth) {
+        console.log(loggedInUser);
+        if (loggedInUser.role === "admin") {
+          navigate("/admin/home");
+        }
+        else if (loggedInUser.role === "user") {
+          navigate("/user/home")
+        }
+      }
+    }
+  }, [loggedInUser, isAuth])
   useEffect(() => {
     if (accAccess === "Login") {
       setSign("SignUp");
